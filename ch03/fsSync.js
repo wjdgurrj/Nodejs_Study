@@ -1,4 +1,4 @@
-var fs = require('fs');
+﻿var fs = require('fs');
 
 try{
     var data = fs.readFileSync('./helloWorld.txt', 'utf-8');
@@ -6,4 +6,4 @@ try{
 }
 catch(error){
     console.error("Error : ", error);
-}
+} 
