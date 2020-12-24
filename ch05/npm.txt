@@ -1,0 +1,9 @@
+﻿npm install async
+npm uninstall async -> 지역 설치
+
+npm make_list
+npm install -g mocha -> 전역 설치
+
+// package.json
+
+npm init
