@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/wjdgurrj/Nodejs_Study#readme",
   "dependencies": {
-    "async": "^3.2.0"
+    "async": "^3.2.0",
+    "formidable": "^1.2.2"
   }
 }
