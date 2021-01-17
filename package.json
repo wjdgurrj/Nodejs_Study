@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "npm sample",
   "main": "index.js",
+  "async": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/wjdgurrj/Nodejs_Study#readme",
   "dependencies": {
     "async": "^3.2.0",
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "formidable": "^1.2.2",
     "morgan": "^1.10.0",
