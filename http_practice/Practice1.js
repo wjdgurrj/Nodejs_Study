@@ -38,7 +38,7 @@ function showList(res) {
    var body = '<html>';
    body += '<head><meta charset="UTF-8"></head>';
    body += '<body>';
-   body += '<h3>Favorite Paint</h3>';
+   
 
    body += '<ul>';
    paintList.forEach(function (item, index) {
@@ -46,15 +46,17 @@ function showList(res) {
       if (item.image) {
          body += '<img src="' + item.image + '" style="height:100pt"></img>';
       }
-      body += item.title;
+      body += item.title + "(" + item.director + "," + item.years +")";
       body += '</li>';
    });
    body += '</ul>';
-
+   body += '<h3>새 영화 입력</h3>';
    body += '<form action="." enctype="multipart/form-data" method="post">' +
-   '<div><label>작품 이름 : </label><input type="text" name="title"></div>' +
-   '<div><label>작품 이미지 : </label><input type="file" name="image" value="작품 파일 선택"></div>' +
-   '<input type="submit" value="upload">' +
+   '<div><label>영화 제목 : </label><input type="text" name="title"></div>' +
+   '<div><label>영화 감독 : </label><input type="text" name="director"></div>' +
+   '<div><label>년도 : </label><input type="text" name="years"></div>' +
+   '<div><label>작품 이미지 : </label><input type="file" name="image" value="=choose"></div>' +
+   '<input type="submit" value="올리기">' +
    '</form>';
    body += '</body></html>';
 
@@ -71,6 +73,8 @@ function addNewPaint(req, res) {
   
   form.parse(req, function(err,fields,files){
       var title = fields.title;
+      var director = fields.director;
+      var years = fields.years;
       var image = files.image;
 
       console.log(image);
@@ -86,7 +90,7 @@ function addNewPaint(req, res) {
       var url = 'image/' + newImageName +ext;
 
       var info = {
-          title : title,image:url
+          title : title,image:url, years: years, director: director,
       }
 
       paintList.push(info);
