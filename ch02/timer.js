@@ -16,4 +16,5 @@ function sayHello2(){
 }
 setInterval(function() { // 반복해서 만들어내는 함수
     sayHello2();
+    
 }, 3 * 100)
